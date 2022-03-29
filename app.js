@@ -1,14 +1,6 @@
-var inquirer = require('inquirer');
-
-// Questions
-// 1. What is the title of your project?
-// 2. Please write a small description of your project.
-// 3. What are the installation instructions for your project?
-// 4. How can this application be used?
-// 5. What are the guidelines for contributing to this project?
-// 6. How do we test the application?
-// 7. What is your Github Username?
-// 8. What is your email address?
+const inquirer = require('inquirer');
+const fs = require('fs');
+const license = require(./utils);
 
 // README Sections
 // 1. Description
@@ -64,6 +56,14 @@ const questions = [
   },
 ];
 
-inquirer.prompt(questions).then((answers) => {
-  console.log(JSON.stringify(answers, null, ''));
+inquirer.prompt(questions).then((resp) => {
+  // console.log(JSON.stringify(resp, null, ''));
+  console.log(`Project Title: ${resp.projectTitle}`);
+  console.log(`Description: ${resp.projectDesc}`);
+  console.log(`Installation Instructions: ${resp.projectInstallInstructions}`);
+  console.log(`App Usage: ${resp.projectAppUsage}`);
+  console.log(`Contribution Guidelines: ${resp.projectGuidelines}`);
+  console.log(`How To Test: ${resp.projectTestApp}`);
+  console.log(`Github Username: ${resp.projectGithubUsername}`);
+  console.log(`Email: ${resp.projectUserEmail}`);
 });
