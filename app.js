@@ -1,18 +1,9 @@
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const license = require(./utils);
 
-// README Sections
-// 1. Description
-// 2. Installation
-// 3. Usage
-// 4. Contributing
-// 5. Tests
-// 6. Questions
-
-// License Options LIST
-// add badge near top of README 
-
+// TODO: Create an array of questions for user input
 const questions = [
   {
     type: 'input',
@@ -67,3 +58,12 @@ inquirer.prompt(questions).then((resp) => {
   console.log(`Github Username: ${resp.projectGithubUsername}`);
   console.log(`Email: ${resp.projectUserEmail}`);
 });
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
