@@ -45,7 +45,7 @@ function generateMarkdown(data) {
   <a name="questions"></a>
   ## Questions
   If you have any questions, you can [email](mailto:${data.projectUserEmail}) me.
-  Check out my [Github]](https://github.com/${data.projectGithubUsername})
+  Check out my [Github](https://github.com/${data.projectGithubUsername})
   
 `;
 }

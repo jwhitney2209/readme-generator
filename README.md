@@ -31,5 +31,5 @@
   <a name="questions"></a>
   ## Questions
   If you have any questions, you can [email](mailto:jwhitney@bisd.us) me.
-  Check out my [Github]](https://github.com/jwhitney2209)
+  Check out my [Github](https://github.com/jwhitney2209)
   
