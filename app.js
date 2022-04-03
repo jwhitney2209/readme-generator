@@ -47,23 +47,26 @@ const questions = [
   },
 ];
 
-inquirer.prompt(questions).then((resp) => {
-  // console.log(JSON.stringify(resp, null, ''));
-  console.log(`Project Title: ${resp.projectTitle}`);
-  console.log(`Description: ${resp.projectDesc}`);
-  console.log(`Installation Instructions: ${resp.projectInstallInstructions}`);
-  console.log(`App Usage: ${resp.projectAppUsage}`);
-  console.log(`Contribution Guidelines: ${resp.projectGuidelines}`);
-  console.log(`How To Test: ${resp.projectTestApp}`);
-  console.log(`Github Username: ${resp.projectGithubUsername}`);
-  console.log(`Email: ${resp.projectUserEmail}`);
-});
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  const readMe = generateMarkdown(readMeData);
+  fs.writeFile('./README.md', readMe, err => {
+    if (err) throw new Error(err);
+    console.log('Readme created! Checkout README.md in this directory to see it!');
+  });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  return inquirer.prompt(questions)
+  .then((resp) => {
+    const readMe = generateMarkdown(resp);
+    fs.writeFile('./README.md', readMe, err => {
+      if (err) throw new Error(err);
+      console.log('Readme created! Checkout README.md in this directory to see it!');
+    });
+  });
+};
 
 // Function call to initialize app
 init();
