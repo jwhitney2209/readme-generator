@@ -43,7 +43,25 @@ const questions = [
     name: 'projectUserEmail',
     message: 'What is your email address?'
   },
+  {
+    type: 'list',
+    name: 'license',
+    message: 'Select your license from the options below:',
+    choices: [
+      "Apache",
+      "Academic",
+      "GNU",
+      "ISC",
+      "MIT",
+      "Mozilla",
+      "Open"
+  ]
+  },
 ];
+
+
+
+
 
 function init() {
   return inquirer.prompt(questions)

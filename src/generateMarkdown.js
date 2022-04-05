@@ -1,51 +1,75 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (!license) {
+    return '';
+  }
+
+  return `
+  ![badge](https://img.shields.io/badge/License-${license}-brightgreen)
+  `
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (!license) {
+    return '';
+  }
+
+  return `
+  This application is covered by the [${license}](https://opensource.org/licenses/${license}) license.
+  `
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (!license) {
+    return '';
+  }
+
+  return `
+  ## License
+  `
+}
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.projectTitle}
-  <a name="desc"></a>
+  return `
+  # ${data.projectTitle}
+  ${renderLicenseBadge(data.license)}
+
   ## Description
   ${data.projectDesc}
 
   ## Table of Contents:
-  1. [ Description ](#desc)
-  2. [ Installation ](#instructions)
-  3. [ Usage ](#usage)
-  4. [ Contributing ](#guidelines)
-  5. [ Tests ](#test)
-  6. [ Questions ](#questions)
-  7. [ Email ](#email)
+  - [ Description ](#description)
+  - [ Installation ](#installation)
+  - [ Usage ](#usage)
+  - [ Contributing ](#contributing)
+  - [ Tests ](#tests)
+  - [ Questions ](#questions)
 
-  <a name="instructions"></a>
   ## Installation
   ${data.projectInstallInstructions}
 
-  <a name="usage"></a>
   ## Usage
   ${data.projectAppUsage}
 
-  <a name="guidelines"></a>
   ## Contributing
   ${data.projectGuidelines}
 
-  <a name="test"></a>
   ## Tests
   ${data.projectTestApp}
 
-  <a name="questions"></a>
   ## Questions
-  If you have any questions, you can [email](mailto:${data.projectUserEmail}) me.
-  Check out my [Github](https://github.com/${data.projectGithubUsername})
+  If you have any questions, you can [email](mailto:${data.projectUserEmail}) me. <br />
+  Check out my Github [${data.projectGithubUsername}](https://github.com/${data.projectGithubUsername})
+
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
   
 `;
 }
