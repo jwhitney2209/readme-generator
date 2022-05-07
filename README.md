@@ -1,40 +1,41 @@
 
-  # Sample README Generator
-  
-  ![badge](https://img.shields.io/badge/License-MIT-brightgreen)
-  
+# E-Commerce Back-End
 
-  ## Description
-  An application that generates READMEs for users based on input.
+![badge](https://img.shields.io/badge/License-Open-brightgreen)
 
-  ## Table of Contents:
-  - [ Description ](#description)
-  - [ Installation ](#installation)
-  - [ Usage ](#usage)
-  - [ Contributing ](#contributing)
-  - [ Tests ](#tests)
-  - [ Questions ](#questions)
 
-  ## Installation
-  npm install inquirer
+## Description
+Back-end for an e-commerce site. Uses Express.js API and configured to use Sequelize to interact with a MySQL database.
 
-  ## Usage
-  This application can be used by invoking node index.js on the command line of the root directory
+## Table of Contents:
+- [ Description ](#description)
+- [ Installation ](#installation)
+- [ Usage ](#usage)
+- [ Contributing ](#contributing)
+- [ Tests ](#tests)
+- [ Questions ](#questions)
 
-  ## Contributing
-  Fork and Pull Requests are currently being accepted after review.
+## Installation
+```sh
+npm install dotenv mysql2 sequelize express
+```
 
-  ## Tests
-  There are no current tests for this application yet.
+## Usage
+Source the schema from the MySQL using `source db/schema.sql` then seed the data using `npm run seed` and finally use `npm start` to launch the server.
 
-  ## Questions
-  If you have any questions, you can [email](mailto:jwhitney2209@hotmail.com) me. <br />
-  Check out my Github [jwhitney2209](https://github.com/jwhitney2209)
+## Contributing
+Forks and Pull Requests
 
-  
-  ## License
-  
-  
-  This application is covered by the [MIT](https://opensource.org/licenses/MIT) license.
-  
-  
+## Tests
+You can test the server back-end using Insomnia to run the API routes locally
+
+
+## Questions
+If you have any questions, you can [email](mailto:jwhitney.2209@icloud.com) me. <br />
+Check out my Github [jwhitney2209](https://github.com/jwhitney2209)
+
+
+## License
+This application is covered by the [Open](https://opensource.org/licenses/Open) license.
+
+
